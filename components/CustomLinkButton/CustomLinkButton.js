@@ -7,12 +7,31 @@ const useStyles = makeStyles((theme) => ({
     background: "#5346DD",
     color: "white",
     borderRadius: 8,
+    fontWeight: 600,
+    borderRadius: 8,
+    padding: 14,
     "&:hover": {
       background: "#8850FF",
       textDecoration: "none",
     },
     "&:focus": {
       background: "#651DFF",
+      textDecoration: "none",
+    },
+  },
+  secondary: {
+    background: "#72DEDD",
+    color: "#1C4C4C",
+    borderRadius: 8,
+    fontWeight: 600,
+    borderRadius: 8,
+    padding: 14,
+    "&:hover": {
+      background: "#7DE0DF",
+      textDecoration: "none",
+    },
+    "&:focus": {
+      background: "#5FD9D7",
       textDecoration: "none",
     },
   },
@@ -61,7 +80,9 @@ const CustomLinkButton = (props) => {
       ? classes.outlinedPrimary
       : className === "outlinedWhite"
       ? classes.outlinedWhite
-      : "";
+      : className === "secondary"
+      ? classes.secondary
+      : classes.primary;
 
   return (
     <Link

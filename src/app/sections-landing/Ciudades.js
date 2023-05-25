@@ -2,6 +2,7 @@
 import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import clsx from "clsx";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -13,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
 
 const cityList = [
   {
+    name: "Cali",
+    image: "/assets/images/home/ciudades/cali.png",
+  },
+  {
     name: "Bogotá",
     image: "/assets/images/home/ciudades/bogota.png",
   },
@@ -20,20 +25,21 @@ const cityList = [
     name: "Medellín",
     image: "/assets/images/home/ciudades/medellin.png",
   },
-  {
-    name: "Cali",
-    image: "/assets/images/home/ciudades/cali.png",
-  },
-  {
-    name: "Barranquilla",
-    image: "/assets/images/home/ciudades/barranquilla.png",
-  },
 ];
 
 const Ciudades = () => {
   const classes = useStyles();
+
+  const [hover, setHover] = useState(null);
+
+  const handleMouseOver = (prop) => (event) => {
+    setHover(prop);
+  };
+
+  console.log("first", hover);
+
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto xl:px-0 lg:px-36 px-0">
       <div className={clsx(classes.box, "w-full px-24 py-16 bg-white mb-16")}>
         <Typography
           variant="h5"
@@ -42,16 +48,21 @@ const Ciudades = () => {
         >
           <span style={{ color: "#5346DD" }}>Elevo</span> cerca de tí
         </Typography>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-3">
           {cityList.map((city, index) => (
             <div key={index} className="flex justify-center">
               <div
                 style={{
-                  backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%), url(${city.image})`,
+                  backgroundImage:
+                    hover === index
+                      ? `url(${city.image})`
+                      : `linear-gradient(0deg, rgba(0,0,0,0.7708333333333334) 0%, rgba(153,153,153,1) 100%, rgba(255,255,255,0.8660714285714286) 100%), url(${city.image})`,
                   backgroundBlendMode: "normal-luminosity",
                   borderRadius: 16,
                 }}
                 className="bg-cover bg-no-repeat bg-center w-full flex items-end justify-center max-w-[220px] min-h-[220px]"
+                onMouseOver={handleMouseOver(index)}
+                onMouseLeave={handleMouseOver(null)}
               >
                 <Typography
                   variant="h6"

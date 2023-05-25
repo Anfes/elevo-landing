@@ -20,7 +20,7 @@ const HomeLanding = () => {
   return (
     <Grid container className={clsx(classes.container, "flex items-center")}>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-        <div className="container mx-auto">
+        <div className="container mx-auto xl:px-0 lg:px-36 px-0 ">
           <div className="w-1/2">
             <Typography
               variant="h1"
@@ -47,11 +47,11 @@ const HomeLanding = () => {
               <CustomLinkButton
                 className="outlinedPrimary"
                 label="Nuestros Servicios"
-                href="#"
+                href="#servicios"
               />
             </div>
           </div>
-          <Link href="#" className=" fixed right-10 bottom-144 z-999">
+          <Link href="/reserva-cita" className=" fixed right-10 bottom-144 z-50">
             <div
               className="flex justify-center items-center py-4 px-4"
               style={{

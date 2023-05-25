@@ -48,24 +48,23 @@ const Header = () => {
             />
           </div>
           <div className="grid grid-cols-5 gap-4">
-            <Link href="#" className={classes.menuText}>
+            <Link href="#inicio" className={classes.menuText}>
               Inicio
             </Link>
-            <Link href="#" className={classes.menuText}>
+            <Link href="#servicios" className={classes.menuText}>
               Servicios
             </Link>
-            <Link href="#" className={classes.menuText}>
+            <Link href="#trabaja-con-nosotros" className={classes.menuText}>
               Trabaja con nosotros
             </Link>
-            <Link href="#" className={classes.menuText}>
+            <Link href="#contacto" className={classes.menuText}>
               Contáctanos
             </Link>
             <Link
-              href="#"
+              href="/reserva-cita"
               className={clsx(classes.reserveLink, classes.menuText)}
             >
-              ¡Reserva ahora!{' '}
-              <TodayRoundedIcon className="ml-2"/>
+              ¡Reserva ahora! <TodayRoundedIcon className="ml-2" />
             </Link>
           </div>
         </div>
