@@ -21,7 +21,7 @@ const WorkUs = () => {
       }}
       className="mt-32"
     >
-      <div className="container mx-auto xl:px-0 lg:px-36 px-0 flex flex-col justify-center items-center h-full">
+      <div className="container mx-auto xl:px-36 lg:px-36 px-0 flex flex-col justify-center items-center h-full">
         <Typography
           variant="h2"
           className="font-bold text-5xl text-center text-[#fff] mb-12 "

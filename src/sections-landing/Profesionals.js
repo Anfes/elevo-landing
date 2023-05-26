@@ -5,7 +5,7 @@ import TodayRoundedIcon from "@mui/icons-material/TodayRounded";
 
 const Profesionals = () => {
   return (
-    <div className="container mx-auto xl:px-0 lg:px-36 px-0 grid grid-cols-2">
+    <div className="container mx-auto xl:px-36 lg:px-36 px-0 grid grid-cols-2">
       <div className="flex flex-col justify-center">
         <Typography variant="h2" className="font-bold text-4xl text-[#2D3145] ">
           Los mejores profesionales{" "}

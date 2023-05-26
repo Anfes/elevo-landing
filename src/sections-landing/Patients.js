@@ -87,7 +87,7 @@ const listPatients = [
 
 const Patients = () => {
   return (
-    <div className="mx-auto xl:px-0 lg:px-36 px-0 mb-36" >
+    <div className="mx-auto xl:px-36 lg:px-36 px-0 mb-36" >
       <Head>
         <link
           rel="stylesheet"

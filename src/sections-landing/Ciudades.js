@@ -39,7 +39,7 @@ const Ciudades = () => {
   console.log("first", hover);
 
   return (
-    <div className="container mx-auto xl:px-0 lg:px-36 px-0">
+    <div className="container mx-auto xl:px-36 lg:px-36 px-0">
       <div className={clsx(classes.box, "w-full px-24 py-16 bg-white mb-16")}>
         <Typography
           variant="h5"
@@ -56,7 +56,7 @@ const Ciudades = () => {
                   backgroundImage:
                     hover === index
                       ? `url(${city.image})`
-                      : `linear-gradient(0deg, rgba(0,0,0,0.7708333333333334) 0%, rgba(153,153,153,1) 100%, rgba(255,255,255,0.8660714285714286) 100%), url(${city.image})`,
+                      : `linear-gradient(0deg, rgba(0,0,0,0.5) 100%, rgba(255,255,255,1) 100%), url(${city.image})`,
                   backgroundBlendMode: "normal-luminosity",
                   borderRadius: 16,
                 }}

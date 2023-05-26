@@ -13,7 +13,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 const Footer = () => {
   return (
     <div className="w-full bg-[#2E2499] py-16">
-      <div className="container mx-auto grid grid-cols-3 ">
+      <div className="container mx-auto xl:px-36 lg:px-36 px-0 grid grid-cols-3 ">
         <div className="flex flex-col first-letter:">
           <img
             src="/assets/images/icon/icon-elevo-w.png"

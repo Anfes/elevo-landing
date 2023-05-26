@@ -20,7 +20,7 @@ const HomeLanding = () => {
   return (
     <Grid container className={clsx(classes.container, "flex items-center")}>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-        <div className="container mx-auto xl:px-0 lg:px-36 px-0 ">
+        <div className="container mx-auto xl:px-36 lg:px-36 px-0 ">
           <div className="w-1/2">
             <Typography
               variant="h1"

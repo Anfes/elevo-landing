@@ -38,7 +38,7 @@ const Header = () => {
   const classes = useStyles();
   return (
     <AppBar position="static" className={classes.header}>
-      <div className="container mx-auto">
+      <div className="container mx-auto xl:px-36 lg:px-36 px-0">
         <div className="flex justify-between py-6 ">
           <div className="flex items-center">
             <img

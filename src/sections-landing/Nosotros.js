@@ -49,7 +49,7 @@ const Nosotros = () => {
       }}
       className="w-full flex items-center mb-20"
     >
-      <div className="container mx-auto xl:px-0 lg:px-36 px-0 grid grid-cols-2 w-full">
+      <div className="container mx-auto xl:px-36 lg:px-36 px-0 grid grid-cols-2 w-full">
         <div className="col-start-2">
           <Typography className="text-4xl font-bold text-[#2D3145] mb-4 ">
             ¿Por qué en <span className="text-[#3F34BB]">elevo</span> somos{" "}

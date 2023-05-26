@@ -71,7 +71,7 @@ const Services = () => {
   };
   console.log("hover", hover);
   return (
-    <div className="container mx-auto xl:px-0 lg:px-36 px-0">
+    <div className="container mx-auto xl:px-36 lg:px-36 px-0">
       <Typography
         variant="h5"
         className="font-bold text-center text-3x1 mb-4"

@@ -79,7 +79,7 @@ const Contact = () => {
         background: "linear-gradient(180deg, #FFFFFF 0%, #EDF0FF 100%)",
       }}
     >
-      <div className="mt-20 py-12 grid grid-cols-2 container mx-auto xl:px-0 lg:px-36 px-0">
+      <div className="mt-20 py-12 grid grid-cols-2 container mx-auto xl:px-36 lg:px-36 px-0">
         <div className="flex flex-col justify-center ">
           <Typography
             variant="h2"

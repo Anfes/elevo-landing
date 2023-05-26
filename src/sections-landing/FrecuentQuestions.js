@@ -42,7 +42,7 @@ const FrecuentQuestions = () => {
 console.log("FrecuentQuestions.js: preguntas: ", expanded);
 
   return (
-    <div className="flex justify-center container mx-auto xl:px-0 lg:px-36 px-0 mt-32">
+    <div className="flex justify-center container mx-auto xl:px-36 lg:px-36 px-0 mt-32">
       <div className="w-full">
         <Typography
           variant="h2"
