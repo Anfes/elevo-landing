@@ -8,15 +8,6 @@ import Link from "next/link";
 
 const servicesList = [
   {
-    id: "btn_detalle_masaje_relajante",
-    name: "Masaje Relajante",
-    description:
-      "Técnicas manuales, suaves y rítmicas que generan bienestar corporal. Aplicación de aceites esenciales.",
-    image: "/assets/images/home/servicios/servicio1.png",
-    premium: false,
-    link: "/masaje-relajante",
-  },
-  {
     id: "btn_detalle_masaje_terapeutico",
     name: "Masaje Terapéutico",
     description:
@@ -43,27 +34,9 @@ const servicesList = [
     premium: false,
     link: "/quiromasaje",
   },
-  {
-    id: "btn_detalle_quiroterapia",
-    name: "Quiroterapia",
-    description:
-      "Técnicas manuales, suaves y rítmicas que generan bienestar corporal. Aplicación de aceites esenciales.",
-    image: "/assets/images/home/servicios/servicio5.png",
-    premium: false,
-    link: "/quiroterapia",
-  },
-  {
-    id: "btn_detalle_consulta_medica",
-    name: "Consulta Médica",
-    description:
-      "Terapias premium con los especialistas GOLD de nuestra platafoma. Incluyen varios servicios adicionales.",
-    image: "/assets/images/home/servicios/servicio6.png",
-    premium: true,
-    link: "/consulta-medica",
-  },
 ];
 
-const Services = () => {
+const OtherServices = () => {
   const [hover, setHover] = useState(null);
 
   const handleMouse = (prop) => (event) => {
@@ -71,13 +44,14 @@ const Services = () => {
   };
 
   return (
-    <div className="container mx-auto xl:px-36 lg:px-36 px-0">
+    <div className="container mx-auto xl:px-36 lg:px-36 px-0 mb-32">
       <Typography
         variant="h5"
         className="font-bold text-center text-3x1 mb-4"
         color="#2D3145"
       >
-        Nuestros <span style={{ color: "#5346DD" }}>Servicios</span>
+        Otros <span style={{ color: "#5346DD" }}>Servicios </span> que te
+        podrían interesar
       </Typography>
       <Typography
         variant="h6"
@@ -169,8 +143,15 @@ const Services = () => {
           </div>
         ))}
       </div>
+      <div className="flex justify-center">
+        <CustomLinkButton
+          className="outlinedPrimary"
+          label="Ver todos los servicios"
+          href="/#servicios"
+        />
+      </div>
     </div>
   );
 };
 
-export default Services;
+export default OtherServices;
