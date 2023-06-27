@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import { useEffect, useState } from "react";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
@@ -34,6 +34,7 @@ const listReasons = [
 
 const Nosotros = () => {
   const [ancho, setAncho] = useState(0);
+  const matches = useMediaQuery("(min-width:1440px)");
 
   useEffect(() => {
     setAncho(window.innerWidth);
@@ -42,20 +43,21 @@ const Nosotros = () => {
   return (
     <div
       style={{
-        backgroundImage: " url(/assets/images/home/nosotros.png)",
-        backgroundSize: "60% 100%",
+        backgroundImage: matches ? " url(/assets/images/home/nosotros.png)" :"linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 118.71%) ,url(/assets/images/home/nosotros.png)",
+        backgroundSize: matches ? "60% 100%" : "cover",
         backgroundRepeat: "no-repeat",
-        height: `${(864 * (ancho * 0.6)) / 904}px`,
+        backgroundPositionX: "left",
+        height: matches ? `${(864 * (ancho * 0.6)) / 904}px` : "",
       }}
       className="w-full flex items-center mb-20"
     >
-      <div className="container mx-auto xl:px-36 lg:px-36 px-0 grid grid-cols-2 w-full">
-        <div className="col-start-2">
-          <Typography className="text-4xl font-bold text-[#2D3145] mb-4 ">
+      <div className="container mx-auto grid grid-cols-2 w-full  sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full  ">
+        <div className={matches ? "col-start-2" : "col-start-1 col-span-2"}>
+          <Typography className="sm:text-4xl text-2xl xl:mt-0 mt-12 font-bold text-[#2D3145] mb-4 ">
             ¿Por qué en <span className="text-[#3F34BB]">elevo</span> somos{" "}
             <span className="text-[#3F34BB]">cracks?</span>
           </Typography>
-          <Typography className="text-11 text-[#535978] mt-4">
+          <Typography className="sm:text-11 text-[12px] text-[#535978] mt-4">
             Todos los servicios de elevo son TOP. Pensamos en tu bienestar y el
             de tu familia. Llevamos literal bienestar a la puerta de tu hogar u
             oficina.
@@ -67,7 +69,7 @@ const Nosotros = () => {
             >
               <div>{item.icon}</div>
               <div className="ml-4">
-                <Typography className="text-10 text-[#535978]">
+                <Typography className="sm:text-10 text-[12px] text-[#535978]">
                   <span className="text-[#3F34BB]">{item.title}</span>{" "}
                   {item.description}
                 </Typography>

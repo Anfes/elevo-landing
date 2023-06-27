@@ -13,14 +13,19 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 const Footer = () => {
   return (
     <div className="w-full bg-[#2E2499] py-16">
-      <div className="container mx-auto xl:px-36 lg:px-36 px-0 grid grid-cols-3 ">
-        <div className="flex flex-col first-letter:">
+      <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full grid grid-cols-3 ">
+        <div className="flex flex-col first-letter: md:col-span-1 col-span-3 mb-12">
           <img
             src="/assets/images/icon/icon-elevo-w.png"
             alt="logo"
-            className="w-40 mb-32"
+            className="w-40 mb-8"
           />
-          <div className="mb-8">
+          <Typography variant="body1" className="text-[#fff] text-[12px] mb-12">
+            Elevo es una plataforma digital que conecta a los mejores
+            profesionales de la salud con personas que buscan bienestar y
+            calidad de vida.
+          </Typography>
+          <div className="mb-8 w-full flex md:justify-start justify-center">
             <CustomLinkButton
               className="secondary"
               href="/reserva-cita"
@@ -36,7 +41,7 @@ const Footer = () => {
           <Typography variant="body1" className="text-[#fff] font-bold ">
             Conoce más de nosotros en nuestras redes.
           </Typography>
-          <div className="flex gap-8 mt-8">
+          <div className="flex gap-8 mt-8 md:justify-start justify-center">
             <Link href="https://www.facebook.com/elevo.co" target="_blank">
               <FacebookIcon style={{ color: "#fff" }} className="" />
             </Link>
@@ -54,7 +59,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col md:items-center md:col-span-1 col-span-3 mb-12">
           <div>
             <Typography variant="h6" className="text-[#72DEDD] font-bold mb-8">
               Enlaces
@@ -85,7 +90,7 @@ const Footer = () => {
             </Typography>
           </div>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col md:items-center md:col-span-1 col-span-3 mb-12">
           <div>
             <Typography variant="h6" className="text-[#72DEDD] font-bold mb-8">
               Compañía
@@ -111,7 +116,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-32 py-12 border-t-[1px] border-t-solid border-t-[#6A5CFF] container mx-auto ">
+      <div className="mt-32 py-12 border-t-[1px] border-t-solid border-t-[#6A5CFF] container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full">
         <Typography variant="body1" className="text-[#8B81FF] text-left">
           © Copyright 2023 Elevo LLC | All Rights Reserved.
         </Typography>

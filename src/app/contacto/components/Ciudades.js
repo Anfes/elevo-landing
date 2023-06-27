@@ -3,31 +3,6 @@ import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import clsx from "clsx";
 import { useState } from "react";
-import Slider from "react-slick";
-
-const useStyles = makeStyles((theme) => ({
-  box: {
-    boxShadow: "0px 4px 40px rgba(45, 49, 69, 0.1)",
-    borderRadius: 16,
-  },
-}));
-
-const responsive = {
-  responsive: [
-    {
-      breakpoint: 960,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
-};
 
 const cityList = [
   {
@@ -45,47 +20,24 @@ const cityList = [
 ];
 
 const Ciudades = () => {
-  const classes = useStyles();
-
   const [hover, setHover] = useState(null);
 
   const handleMouseOver = (prop) => (event) => {
     setHover(prop);
   };
 
-  console.log("first", hover);
-
   return (
     <div className="container mx-auto xl:px-36 lg:px-36 px-0">
-      <div className={clsx(classes.box, "w-full md:px-24 sm:px-16 px-10 py-16 bg-white mb-16 sm:-mt-32 -mt-16")}>
+      <div className={"w-full px-24 py-16 bg-white mb-16"}>
         <Typography
           variant="h5"
           className="font-bold text-center mb-8"
           color="#2D3145"
         >
-          <span style={{ color: "#5346DD" }}>Elevo</span> cerca de tí
+          ¡Aquí podrás
+          <span style={{ color: "#5346DD" }}> encontrarnos</span>
         </Typography>
-        <div>
-        <Slider
-        infinite
-        rows
-        dots
-        autoplay
-        autoplaySpeed={3000}
-        arrows={false}
-        swipe
-        swipeToSlide
-        slidesToShow={
-          cityList?.length === 1
-            ? 1
-            : cityList?.length === 2
-            ? 2
-            : cityList?.length === 3
-            ? 3
-            : 4
-        }
-        {...responsive}
-      >
+        <div className="grid grid-cols-3">
           {cityList.map((city, index) => (
             <div key={index} className="flex justify-center">
               <div
@@ -97,7 +49,7 @@ const Ciudades = () => {
                   backgroundBlendMode: "normal-luminosity",
                   borderRadius: 16,
                 }}
-                className="bg-cover bg-no-repeat bg-center w-full flex items-end justify-center max-w-[220px] min-h-[220px] m-auto"
+                className="bg-cover bg-no-repeat bg-center w-full flex items-end justify-center max-w-[220px] min-h-[220px]"
                 onMouseOver={handleMouseOver(index)}
                 onMouseLeave={handleMouseOver(null)}
               >
@@ -111,7 +63,6 @@ const Ciudades = () => {
               </div>
             </div>
           ))}
-        </Slider>
         </div>
       </div>
     </div>

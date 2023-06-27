@@ -13,7 +13,7 @@ const Share = () => {
   };
 
   return (
-    <div className="container mx-auto xl:px-36 lg:px-36 px-0 mb-20">
+    <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full mb-32 ">
       <Typography
         variant="h5"
         className="font-bold text-center text-3x1 mb-4"
@@ -41,10 +41,10 @@ const Share = () => {
         onMouseEnter={handleHover(true)}
         onMouseLeave={handleHover(false)}
       >
-        <Typography className="text-white text-lg font-bold mb-4 w-1/2">
+        <Typography className="text-white text-lg font-bold mb-4 sm:w-1/2 w-full ">
           Parejas, familiares o amigos
         </Typography>
-        <Typography className="text-white text-10 w-1/2">
+        <Typography className="text-white text-10 sm:w-1/2 w-full ">
           Lorem ipsum dolor sit amet consectetur. Faucibus eget facilisis
           nascetur cras vitae bibendum commodo. Tellus ut consequat ipsum elit
           at. Lorem diam lectus massa ut at in.

@@ -8,6 +8,8 @@ import ctr from "@components/countries/Countries";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { makeStyles } from "@mui/styles";
+import Link from "next/link";
+import TodayRoundedIcon from "@mui/icons-material/TodayRounded";
 
 const useStyles = makeStyles((theme) => ({
   buttonSend: {
@@ -44,10 +46,10 @@ const defaultValues = {
 };
 
 const optionTipo = [
-    { value: 1, label: 'Paciente' },
-    { value: 2, label: 'Fisioterapeuta' },
-    { value: 3, label: 'Masoterapeuta' },
-  ];
+  { value: 1, label: "Paciente" },
+  { value: 2, label: "Fisioterapeuta" },
+  { value: 3, label: "Masoterapeuta" },
+];
 
 const schema = yup.object().shape({
   tipo: yup.object().nullable().required("Tipo requerido"),
@@ -74,29 +76,30 @@ const Contact = () => {
     });
   const { isValid, dirtyFields, errors } = formState;
   return (
-    <div
-      style={{
-        background: "linear-gradient(180deg, #FFFFFF 0%, #EDF0FF 100%)",
-      }}
-    >
-      <div className="mt-20 py-12 grid grid-cols-2 gap-4 container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full">
-        <div className="flex flex-col justify-center md:col-span-1 col-span-2">
+    <div className="bg-white">
+      <div className="mt-20 py-12 grid grid-cols-2 container mx-auto xl:px-36 lg:px-36 px-0">
+        <div className="flex flex-col justify-center ">
           <Typography
             variant="h2"
-            className="font-bold text-4xl text-[#2D3145] md:text-left text-center"
+            className="font-bold text-4xl text-[#2D3145] "
           >
-            ¿Aún tienes <span className="text-[#3F34BB]">preguntas</span> sin
-            responder?
+            ¿Còmo podemos <span className="text-[#3F34BB]">ayudarte?</span>
           </Typography>
-          <Typography variant="body1" className="text-[#535978] mt-2 md:text-left text-center ">
+          <Typography variant="body1" className="text-[#535978] mt-2 text-left">
             No te preocupes, nuestro equipo estará siempre disponible para
             responder todas tus preguntas
           </Typography>
         </div>
-        <div className="md:col-span-1 col-span-2 bg-white border-solid border-[1px 1px 0px 1px] border-[#E0E5FC] shadow-[0px 4px 40px 8px rgba(197, 205, 247, 0.2);] rounded-[40px] py-16 px-6">
+        <div
+          className="bg-white border-solid border-[1px 1px 0px 1px] border-[#E0E5FC] rounded-[40px] py-16 px-6"
+          style={{
+            boxShadow: "0px 4px 40px 8px #C5CDF733",
+          }}
+        >
           <Typography variant="h3" className="font-bold text-2xl">
             Ínspirate y cuéntanos tus dudas
           </Typography>
+
           <Typography
             variant="body1"
             className="text-[#535978] mt-2 mb-4 text-left"
@@ -104,7 +107,7 @@ const Contact = () => {
             Déjanos tus datos para poder contactarte
           </Typography>
           <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-3" >
+            <div className="col-span-3">
               <Controller
                 name="tipo"
                 control={control}
@@ -168,7 +171,7 @@ const Contact = () => {
                 )}
               />
             </div>
-            <div className="sm:col-span-1 col-span-3">
+            <div className="col-span-1">
               <Controller
                 name="indicativo"
                 control={control}
@@ -216,7 +219,7 @@ const Contact = () => {
                 )}
               />
             </div>
-            <div className="sm:col-span-2 col-span-3">
+            <div className="col-span-2">
               <Controller
                 name="phone"
                 control={control}
@@ -266,6 +269,21 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Link href="/reserva-cita" className=" fixed right-10 bottom-144 z-50">
+        <div
+          className="flex justify-center items-center py-4 px-4"
+          style={{
+            backgroundColor: "#651DFF",
+            boxShadow: "0px 4px 8px rgba(79, 12, 221, 0.3)",
+            borderRadius: 64,
+          }}
+        >
+          <Typography className={"text-18 font-semibold mr-2 text-white"}>
+            Reservar servicio
+          </Typography>
+          <TodayRoundedIcon className={"text-32 text-white"} />
+        </div>
+      </Link>
     </div>
   );
 };

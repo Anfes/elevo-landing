@@ -1,10 +1,30 @@
 "use client";
 
 import CustomLinkButton from "@components/CustomLinkButton/CustomLinkButton";
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import TodayRoundedIcon from "@mui/icons-material/TodayRounded";
 import { useState } from "react";
 import Link from "next/link";
+import Slider from "react-slick";
+
+const responsive = {
+  responsive: [
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 2,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 1,
+        dots: true,
+      },
+    },
+  ],
+};
 
 const servicesList = [
   {
@@ -64,6 +84,7 @@ const servicesList = [
 ];
 
 const Services = () => {
+  const matches = useMediaQuery("(min-width:960px)");
   const [hover, setHover] = useState(null);
 
   const handleMouse = (prop) => (event) => {
@@ -71,7 +92,7 @@ const Services = () => {
   };
 
   return (
-    <div className="container mx-auto xl:px-36 lg:px-36 px-0">
+    <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full">
       <Typography
         variant="h5"
         className="font-bold text-center text-3x1 mb-4"
@@ -88,87 +109,199 @@ const Services = () => {
         Disfruta de un masajes personalizados y revitalizantes. Descubre todos
         nuestros servicios únicos para cuidar de tu cuerpo y mente.
       </Typography>
-      <div className="grid grid-cols-3 gap-8 mt-16 mb-24">
-        {servicesList.map((service, index) => (
-          <div>
-            <div
-              className="flex justify-center"
-              style={hover === index ? { filter: "blur(2px)" } : {}}
-            >
+      {matches && (
+        <div className="grid grid-cols-3 gap-8 mt-16 mb-24">
+          {servicesList.map((service, index) => (
+            <div>
               <div
-                className="flex flex-col justify-end p-4 bg-cover bg-no-repeat bg-center max-w-[380px] min-h-[380px]"
-                style={{
-                  backgroundImage: `url(${service.image})`,
-                  borderRadius: 24,
-                }}
-                onMouseEnter={handleMouse(index)}
-                onMouseLeave={handleMouse(null)}
+                className="flex justify-center"
+                style={hover === index ? { filter: "blur(2px)" } : {}}
               >
-                <div className="flex items-center mb-2 gap-2">
-                  <Typography
-                    variant="h5"
-                    className="font-bold text-lg"
-                    color="#fff"
-                  >
-                    {service.name}
-                  </Typography>
-                  {service.premium && (
-                    <div className="bg-[#FE51B9] p-1 flex justify-center items-center rounded-md ">
-                      <Typography color="#fff" className="text-xs font-bold ">
-                        Premium
-                      </Typography>
-                    </div>
-                  )}
-                </div>
-                <Typography
-                  variant="h6"
-                  className="text-sm leading-[1.5rem]"
-                  color="#fff"
-                >
-                  {service.description}
-                </Typography>
-              </div>
-            </div>
-            {hover === index && (
-              <div className="flex justify-center -mt-[381px] ">
                 <div
-                  className="flex flex-col justify-center items-center p-4 max-w-[380px] min-h-[380px]"
+                  className="flex flex-col justify-end p-4 bg-cover bg-no-repeat bg-center max-w-[380px] min-h-[380px]"
                   style={{
+                    backgroundImage: `url(${service.image})`,
                     borderRadius: 24,
                   }}
                   onMouseEnter={handleMouse(index)}
                   onMouseLeave={handleMouse(null)}
                 >
-                  <div className="z-10">
-                    <Link href={service.link}>
-                      <Button
-                        id={service.id}
-                        className="bg-[#5346DD] text-white font-bold  px-8 py-4 rounded-xl"
-                        style={{ fontSize: 12 }}
-                      >
-                        Ver detalle
-                      </Button>
-                    </Link>
+                  <div className="flex items-center mb-2 gap-2">
+                    <Typography
+                      variant="h5"
+                      className="font-bold text-lg"
+                      color="#fff"
+                    >
+                      {service.name}
+                    </Typography>
+                    {service.premium && (
+                      <div className="bg-[#FE51B9] p-1 flex justify-center items-center rounded-md ">
+                        <Typography color="#fff" className="text-xs font-bold ">
+                          Premium
+                        </Typography>
+                      </div>
+                    )}
                   </div>
-                  <div className=" z-10" style={{ marginTop: 30 }}>
-                    <CustomLinkButton
-                      className="outlinedWhite"
-                      label="Reservar Servicio"
-                      href="/reserva-cita"
-                      icon={
-                        <TodayRoundedIcon
-                          style={{ color: "white" }}
-                          className="ml-6"
-                        />
-                      }
-                    />
-                  </div>
+                  <Typography
+                    variant="h6"
+                    className="text-sm leading-[1.5rem]"
+                    color="#fff"
+                  >
+                    {service.description}
+                  </Typography>
                 </div>
               </div>
-            )}
-          </div>
-        ))}
-      </div>
+              {hover === index && (
+                <div className="flex justify-center -mt-[381px] ">
+                  <div
+                    className="flex flex-col justify-center items-center p-4 max-w-[380px] min-h-[380px]"
+                    style={{
+                      borderRadius: 24,
+                    }}
+                    onMouseEnter={handleMouse(index)}
+                    onMouseLeave={handleMouse(null)}
+                  >
+                    <div className="z-10">
+                      <Link href={service.link}>
+                        <Button
+                          id={service.id}
+                          className="bg-[#5346DD] text-white font-bold  px-8 py-4 rounded-xl"
+                          style={{ fontSize: 12 }}
+                        >
+                          Ver detalle
+                        </Button>
+                      </Link>
+                    </div>
+                    <div className=" z-10" style={{ marginTop: 30 }}>
+                      <CustomLinkButton
+                        className="outlinedWhite"
+                        label="Reservar Servicio"
+                        href="/reserva-cita"
+                        icon={
+                          <TodayRoundedIcon
+                            style={{ color: "white" }}
+                            className="ml-6"
+                          />
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+      {!matches && (
+        <div className="mt-16 mb-32">
+          <Slider
+            infinite
+            rows
+            dots
+            autoplaySpeed={6000}
+            autoplay
+            arrows={false}
+            swipe
+            swipeToSlide
+            slidesToShow={
+              servicesList?.length === 1
+                ? 1
+                : servicesList?.length === 2
+                ? 2
+                : servicesList?.length === 3
+                ? 3
+                : 4
+            }
+            {...responsive}
+          >
+            {servicesList?.length &&
+              servicesList.map((service, index) => {
+                return (
+                  <div className="px-1">
+                    <div
+                      className="flex justify-center"
+                      style={hover === index ? { filter: "blur(2px)" } : {}}
+                    >
+                      <div
+                        className="flex flex-col justify-end p-4 bg-cover bg-no-repeat bg-center max-w-[380px] min-h-[380px]"
+                        style={{
+                          backgroundImage: `url(${service.image})`,
+                          borderRadius: 24,
+                        }}
+                        onMouseEnter={handleMouse(index)}
+                        onMouseLeave={handleMouse(null)}
+                      >
+                        <div className="flex items-center mb-2 gap-2">
+                          <Typography
+                            variant="h5"
+                            className="font-bold text-lg"
+                            color="#fff"
+                          >
+                            {service.name}
+                          </Typography>
+                          {service.premium && (
+                            <div className="bg-[#FE51B9] p-1 flex justify-center items-center rounded-md ">
+                              <Typography
+                                color="#fff"
+                                className="text-xs font-bold "
+                              >
+                                Premium
+                              </Typography>
+                            </div>
+                          )}
+                        </div>
+                        <Typography
+                          variant="h6"
+                          className="text-sm leading-[1.5rem]"
+                          color="#fff"
+                        >
+                          {service.description}
+                        </Typography>
+                      </div>
+                    </div>
+                    {hover === index && (
+                      <div className="flex justify-center -mt-[381px] ">
+                        <div
+                          className="flex flex-col justify-center items-center p-4 max-w-[380px] min-h-[380px]"
+                          style={{
+                            borderRadius: 24,
+                          }}
+                          onMouseEnter={handleMouse(index)}
+                          onMouseLeave={handleMouse(null)}
+                        >
+                          <div className="z-10">
+                            <Link href={service.link}>
+                              <Button
+                                id={service.id}
+                                className="bg-[#5346DD] text-white font-bold  px-8 py-4 rounded-xl"
+                                style={{ fontSize: 12 }}
+                              >
+                                Ver detalle
+                              </Button>
+                            </Link>
+                          </div>
+                          <div className=" z-10" style={{ marginTop: 30 }}>
+                            <CustomLinkButton
+                              className="outlinedWhite"
+                              label="Reservar Servicio"
+                              href="/reserva-cita"
+                              icon={
+                                <TodayRoundedIcon
+                                  style={{ color: "white" }}
+                                  className="ml-2"
+                                />
+                              }
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+          </Slider>
+        </div>
+      )}
     </div>
   );
 };

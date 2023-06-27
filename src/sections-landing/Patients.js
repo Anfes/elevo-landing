@@ -10,19 +10,19 @@ import "slick-carousel/slick/slick-theme.css";
 const responsive = {
   responsive: [
     {
-      breakpoint: 900,
+      breakpoint: 1440,
       settings: {
         slidesToShow: 3,
       },
     },
     {
-      breakpoint: 700,
+      breakpoint: 960,
       settings: {
-        slidesToShow: 2.4,
+        slidesToShow: 2,
       },
     },
     {
-      breakpoint: 500,
+      breakpoint: 700,
       settings: {
         slidesToShow: 1,
         arrows: false,
@@ -87,7 +87,7 @@ const listPatients = [
 
 const Patients = () => {
   return (
-    <div className="mx-auto xl:px-36 lg:px-36 px-0 mb-36" >
+    <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full mb-32" >
       <Head>
         <link
           rel="stylesheet"
@@ -102,8 +102,7 @@ const Patients = () => {
         />
       </Head>
       <Typography
-        variant="h2"
-        className="font-bold text-4xl text-center text-[#2D3145] mb-8 "
+        className="font-bold text-3xl text-center text-[#2D3145] mb-8 "
       >
         Lo que nuestros <span style={{ color: "#3F34BB" }}>pacientes</span>{" "}
         dicen de nosotros
@@ -112,6 +111,8 @@ const Patients = () => {
         infinite
         rows
         dots
+        autoplaySpeed={3000}
+        autoplay
         arrows={false}
         swipe
         swipeToSlide

@@ -42,7 +42,7 @@ const FrecuentQuestions = () => {
 console.log("FrecuentQuestions.js: preguntas: ", expanded);
 
   return (
-    <div className="flex justify-center container mx-auto xl:px-36 lg:px-36 px-0 mt-32">
+    <div className="flex justify-center container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full my-32">
       <div className="w-full">
         <Typography
           variant="h2"
@@ -52,7 +52,7 @@ console.log("FrecuentQuestions.js: preguntas: ", expanded);
         </Typography>
         <Typography
           variant="h6"
-          className="text-center text-[#535978] mb-12 px-32 "
+          className="text-center text-[#535978] mb-12 sm:px-32 text-sm "
         >
           En elevo no queda nada al aire. Encuentra respuestas a tus dudas más
           comunes. Descubre todo lo que necesitas saber sobre nuestros masajes y

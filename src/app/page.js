@@ -15,50 +15,50 @@ export default function Home() {
   return (
     <div>
       <Header />
-      {/*--------------------------------------*/}
       <section id="inicio">
         <HomeLanding />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="ciudades">
         <Ciudades />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="servicios">
         <Services />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="compartir">
         <Share />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="nosotros">
         <Nosotros />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="pacientes">
         <Patients />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="profesionales">
         <Profesionals />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="trabaja-con-nosotros">
         <WorkUs />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="preguntas-frecuentes">
         <FrecuentQuestions />
       </section>
-      {/*--------------------------------------*/}
+
       <section id="contacto">
         <Contact />
       </section>
-      {/*--------------------------------------*/}
+
       <footer>
         <Footer />
       </footer>
+
     </div>
   );
 }
