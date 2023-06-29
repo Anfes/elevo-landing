@@ -1,5 +1,5 @@
 "use client";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
 import clsx from "clsx";
 import CustomLinkButton from "@components/CustomLinkButton/CustomLinkButton";
 import Link from "next/link";
@@ -13,19 +13,22 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundPositionX: "center",
   },
 }));
 
 const Home = () => {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:600px)");
+
   return (
     <Grid container className={clsx(classes.container, "flex items-center")}>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-        <div className="container mx-auto xl:px-36 lg:px-36 px-0 ">
-          <div className="w-1/2">
+        <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full">
+          <div className="md:w-1/2 w-full">
             <Typography
               variant="h1"
-              className="font-bold text-6xl leading-[4.5rem]	"
+              className="font-bold md:text-6xl text-4xl md:leading-[4.5rem]	"
               color="#2D3145"
             >
               Consulta
@@ -33,7 +36,7 @@ const Home = () => {
             </Typography>
             <Typography
               variant="h6"
-              className="text-2xl leading-[2rem] my-8 font-bold "
+              className="md:text-2xl text-lg leading-[2rem] my-8"
               color="#2D3145"
             >
               ¡Sí! un médico especialista de elevo en tu hogar. Incluye una
@@ -60,9 +63,11 @@ const Home = () => {
                 borderRadius: 64,
               }}
             >
-              <Typography className={"text-18 font-semibold mr-2 text-white"}>
-                Reservar servicio
-              </Typography>
+              {matches && (
+                <Typography className={"text-18 font-semibold mr-2 text-white"}>
+                  Reservar servicio
+                </Typography>
+              )}
               <TodayRoundedIcon className={"text-32 text-white"} />
             </div>
           </Link>

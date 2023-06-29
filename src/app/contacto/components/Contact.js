@@ -10,6 +10,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { makeStyles } from "@mui/styles";
 import Link from "next/link";
 import TodayRoundedIcon from "@mui/icons-material/TodayRounded";
+import Head from "next/head";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const useStyles = makeStyles((theme) => ({
   buttonSend: {
@@ -77,29 +80,40 @@ const Contact = () => {
   const { isValid, dirtyFields, errors } = formState;
   return (
     <div className="bg-white">
-      <div className="mt-20 py-12 grid grid-cols-2 container mx-auto xl:px-36 lg:px-36 px-0">
-        <div className="flex flex-col justify-center ">
+      <Head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
+      </Head>
+      <div className="mt-20 py-12 grid grid-cols-2 gap-4 container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full">
+        <div className="flex flex-col justify-center md:col-span-1 col-span-2">
           <Typography
             variant="h2"
-            className="font-bold text-4xl text-[#2D3145] "
+            className="font-bold text-4xl text-[#2D3145] md:text-left text-center"
           >
-            ¿Còmo podemos <span className="text-[#3F34BB]">ayudarte?</span>
+            ¿Aún tienes <span className="text-[#3F34BB]">preguntas</span> sin
+            responder?
           </Typography>
-          <Typography variant="body1" className="text-[#535978] mt-2 text-left">
+          <Typography
+            variant="body1"
+            className="text-[#535978] mt-2 md:text-left text-center "
+          >
             No te preocupes, nuestro equipo estará siempre disponible para
             responder todas tus preguntas
           </Typography>
         </div>
-        <div
-          className="bg-white border-solid border-[1px 1px 0px 1px] border-[#E0E5FC] rounded-[40px] py-16 px-6"
-          style={{
-            boxShadow: "0px 4px 40px 8px #C5CDF733",
-          }}
-        >
+        <div className="md:col-span-1 col-span-2 bg-white border-solid border-[1px 1px 0px 1px] border-[#E0E5FC] shadow-[0px 4px 40px 8px rgba(197, 205, 247, 0.2);] rounded-[40px] py-16 px-6">
           <Typography variant="h3" className="font-bold text-2xl">
             Ínspirate y cuéntanos tus dudas
           </Typography>
-
           <Typography
             variant="body1"
             className="text-[#535978] mt-2 mb-4 text-left"
@@ -171,7 +185,7 @@ const Contact = () => {
                 )}
               />
             </div>
-            <div className="col-span-1">
+            <div className="sm:col-span-1 col-span-3">
               <Controller
                 name="indicativo"
                 control={control}
@@ -219,7 +233,7 @@ const Contact = () => {
                 )}
               />
             </div>
-            <div className="col-span-2">
+            <div className="sm:col-span-2 col-span-3">
               <Controller
                 name="phone"
                 control={control}

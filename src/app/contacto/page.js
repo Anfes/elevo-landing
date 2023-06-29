@@ -1,9 +1,9 @@
 import Header from "@components/Header/Header";
 import React from "react";
-import WorkUs from "./components/WorkUs";
 import FrecuentQuestions from "../../sections-landing/FrecuentQuestions";
 import Footer from "@components/Footer/Footer";
 import Contact from "./components/Contact";
+import WorkUs from "../../sections-landing/WorkUs";
 import Ciudades from "./components/Ciudades";
 
 const page = () => {

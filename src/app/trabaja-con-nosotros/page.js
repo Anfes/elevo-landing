@@ -1,5 +1,6 @@
 import Footer from '@components/Footer/Footer'
 import Header from '@components/Header/Header'
+import Home from './components/Home'
 
 const page = () => {
   return (
@@ -7,14 +8,7 @@ const page = () => {
       <Header />
       {/*--------------------------------------*/}
       <section>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h1>Comparte</h1>
+        <Home />
       </section>
       <footer>
         <Footer />

@@ -3,6 +3,25 @@ import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import clsx from "clsx";
 import { useState } from "react";
+import Slider from "react-slick";
+
+
+const responsive = {
+  responsive: [
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+};
 
 const cityList = [
   {
@@ -28,7 +47,7 @@ const Ciudades = () => {
 
   return (
     <div className="container mx-auto xl:px-36 lg:px-36 px-0">
-      <div className={"w-full px-24 py-16 bg-white mb-16"}>
+      <div className={"w-full md:px-24 sm:px-16 px-10 py-16 bg-white mb-16 sm:-mt-32 6"}>
         <Typography
           variant="h5"
           className="font-bold text-center mb-8"
@@ -37,7 +56,27 @@ const Ciudades = () => {
           ¡Aquí podrás
           <span style={{ color: "#5346DD" }}> encontrarnos</span>
         </Typography>
-        <div className="grid grid-cols-3">
+        <div >
+        <Slider
+        infinite
+        rows
+        dots
+        autoplay
+        autoplaySpeed={3000}
+        arrows={false}
+        swipe
+        swipeToSlide
+        slidesToShow={
+          cityList?.length === 1
+            ? 1
+            : cityList?.length === 2
+            ? 2
+            : cityList?.length === 3
+            ? 3
+            : 4
+        }
+        {...responsive}
+      >
           {cityList.map((city, index) => (
             <div key={index} className="flex justify-center">
               <div
@@ -63,6 +102,7 @@ const Ciudades = () => {
               </div>
             </div>
           ))}
+        </Slider>
         </div>
       </div>
     </div>
