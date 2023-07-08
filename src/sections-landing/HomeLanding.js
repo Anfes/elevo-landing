@@ -36,8 +36,8 @@ const HomeLanding = () => {
       )}
     >
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-        <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full  ">
-          <div className="md:w-1/2 w-full">
+        <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full flex md:flex-row flex-col ">
+          <div className="md:w-1/2 w-full md:mb-0 mb-12">
             <Typography
               variant="h1"
               className="font-bold md:text-6xl text-4xl md:leading-[4.5rem]	"
@@ -67,6 +67,25 @@ const HomeLanding = () => {
               />
             </div>
           </div>
+          <div className="md:w-1/2 w-full px-24 ">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/ZkUTJkkOnzw"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              className="rounded-2xl"
+            />
+            <Typography
+              variant="h6"
+              className="md:text-2xl text-lg font-semibold leading-[2rem] my-8 text-center"
+              color="#5346DD"
+            >
+              Mira lo que hacemos por tí..
+            </Typography> 
+          </div>
+        </div>
+      </Grid>
           <Link
             href="/reserva-cita"
             className=" fixed right-10 bottom-144 z-50"
@@ -87,8 +106,6 @@ const HomeLanding = () => {
               <TodayRoundedIcon className={"text-32 text-white"} />
             </div>
           </Link>
-        </div>
-      </Grid>
     </Grid>
   );
 };

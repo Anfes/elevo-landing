@@ -51,6 +51,23 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "none",
     },
   },
+  outlinedSecondary: {
+    background: "white",
+    border: "2px solid #72DEDD",
+    color: "#72DEDD",
+    fontWeight: 600,
+    borderRadius: 8,
+    padding: 14,
+    "&:hover": {
+      background: "#EFE8FF",
+      textDecoration: "none",
+    },
+    "&:focus": {
+      background: "#CDB5FF",
+      textDecoration: "none",
+    },
+  },
+
   outlinedWhite: {
     background: "transparent",
     border: "2px solid #fff",
@@ -71,13 +88,15 @@ const useStyles = makeStyles((theme) => ({
 
 const CustomLinkButton = (props) => {
   const classes = useStyles();
-  const { label, className, icon } = props;
+  const { label, className, icon, width, href } = props;
 
   const variantButton =
     className === "primary"
       ? classes.primary
       : className === "outlinedPrimary"
       ? classes.outlinedPrimary
+      : className === "outlinedSecondary"
+      ? classes.outlinedSecondary
       : className === "outlinedWhite"
       ? classes.outlinedWhite
       : className === "secondary"
@@ -85,14 +104,16 @@ const CustomLinkButton = (props) => {
       : classes.primary;
 
   return (
-    <Link
+    <Button
       {...props}
       className={variantButton}
-      onClick={() => {}}
       variant={className === "primary" ? "contained" : "text"}
+      style={{ width: width && width }}
     >
-      {label} {icon && icon}
-    </Link>
+      <Link href={href}>
+        {label} {icon && icon}
+      </Link>
+    </Button>
   );
 };
 
