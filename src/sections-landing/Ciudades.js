@@ -53,17 +53,16 @@ const Ciudades = () => {
     setHover(prop);
   };
 
-  console.log("first", hover);
 
   return (
     <div className="container mx-auto xl:px-36 lg:px-36 px-0">
-      <div className={clsx(classes.box, "w-full md:px-24 sm:px-16 px-10 py-16 bg-white mb-16 sm:-mt-32 -mt-16")}>
+      <div className={clsx(classes.box, "w-full md:px-[76px] sm:px-16 px-8 py-12 bg-white sm:mb-40 mb-20 sm:-mt-32 -mt-8")}>
         <Typography
           variant="h5"
           className="font-bold text-center mb-8"
           color="#2D3145"
         >
-          <span style={{ color: "#5346DD" }}>Elevo</span> cerca de tí
+          <span style={{ color: "#5346DD" }}>elevo</span> cerca de tí
         </Typography>
         <div>
         <Slider
@@ -97,7 +96,7 @@ const Ciudades = () => {
                   backgroundBlendMode: "normal-luminosity",
                   borderRadius: 16,
                 }}
-                className="bg-cover bg-no-repeat bg-center w-full flex items-end justify-center max-w-[220px] min-h-[220px] m-auto"
+                className="bg-cover bg-no-repeat bg-center w-full flex items-end justify-center max-w-[200px] min-h-[200px] m-auto"
                 onMouseOver={handleMouseOver(index)}
                 onMouseLeave={handleMouseOver(null)}
               >

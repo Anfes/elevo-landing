@@ -13,7 +13,7 @@ const WorkUs = () => {
   return (
     <div
       style={{
-        backgroundImage:matches? `linear-gradient(360deg, #211B5A 0%, rgba(18, 38, 139, 0.3) 100%), url("/assets/images/home/workus.png")`: `linear-gradient(360deg, #211B5A 0%, rgba(18, 38, 139, 0.3) 100%), url("/assets/images/home/workus-responsive.png")`,
+        backgroundImage:matches? `url("/assets/images/home/workus.png")`: `linear-gradient(360deg, #211B5A 0%, rgba(18, 38, 139, 0.3) 100%), url("/assets/images/home/workus-responsive.png")`,
         backgroundColor: "#2D3145",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -27,9 +27,9 @@ const WorkUs = () => {
         {matches && (
           <Typography
             variant="h2"
-            className="font-bold md:text-5xl text-3xl text-center text-[#fff] mb-12 "
+            className="font-bold text-[32px] leading-10 text-center text-[#fff] mb-6 max-w-[900px] "
           >
-            ¿Eres un <span className="text-[#72DEDD]">fisioterapeuta</span> o{" "}
+            ¿Eres un <span className="text-[#7vscode-file://vscode-app/c:/Users/Usuario/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html2DEDD]">fisioterapeuta</span> o{" "}
             <span className="text-[#72DEDD]">masoterapeuta</span> con
             experiencia y quieres ser parte de{" "}
             <span className="text-[#72DEDD]">elevo</span> la plataforma más TOP
@@ -40,7 +40,7 @@ const WorkUs = () => {
         {!matches && (
           <Typography
             variant="h2"
-            className="font-bold text-4xl text-center text-[#fff] mb-12 "
+            className="font-bold text-2xl leading-8 text-center text-[#fff] mb-16 mt-36 "
           >
             ¿Eres un <span className="text-[#72DEDD]">especialista </span> en el
             tratamiento de trastornos{" "}

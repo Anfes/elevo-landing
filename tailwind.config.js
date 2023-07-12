@@ -23,5 +23,29 @@ module.exports = {
       print: { raw: "print" },
     },
   },
-  plugins: [],
+  variantOrder: [
+    'first',
+    'last',
+    'odd',
+    'even',
+    'visited',
+    'checked',
+    'empty',
+    'read-only',
+    'group-hover',
+    'group-focus',
+    'focus-within',
+    'hover',
+    'focus',
+    'focus-visible',
+    'active',
+    'disabled',
+  ],
+  plugins: [
+    // eslint-disable-next-line import/no-dynamic-require
+    // Other third party and/or custom plugins
+    require('@tailwindcss/typography')({ modifiers: ['sm', 'lg'] }),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
+  ],
 };

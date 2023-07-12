@@ -1,29 +1,30 @@
 "use client";
 import CustomLinkButton from "@components/CustomLinkButton/CustomLinkButton";
-import { Button, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Button, Typography, useMediaQuery } from "@mui/material";
+import React, { use, useState } from "react";
 import TodayRoundedIcon from "@mui/icons-material/TodayRounded";
 import Link from "next/link";
 
 const Share = () => {
   const [hover, setHover] = useState(false);
+  const matches = useMediaQuery("(min-width:600px)");
 
   const handleHover = (prop) => () => {
     setHover(prop);
   };
 
   return (
-    <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full mb-32 ">
+    <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full sm:mb-[200px] mb-[120px] ">
       <Typography
         variant="h5"
-        className="font-bold text-center text-3x1 mb-4"
+        className="font-bold text-center text-[32px] mb-4 leading-10 "
         color="#2D3145"
       >
-        Comparte <span style={{ color: "#5346DD" }}>Elevo</span>
+        Comparte <span style={{ color: "#5346DD" }}>elevo</span>
       </Typography>
       <Typography
         variant="h6"
-        className="text-center mb-16 text-base "
+        className="text-center mb-16 text-lg leading-6 font-normal "
         color="#535978"
         style={{ maxWidth: "600px", margin: "0 auto" }}
       >
@@ -32,16 +33,16 @@ const Share = () => {
         familiares con uno de nuestros servicios TOP.
       </Typography>
       <div
-        className="mt-12 w-full flex flex-col justify-center px-8 py-16 rounded-xl h-72"
+        className="mt-12 w-full flex flex-col sm:justify-center sm:items-start items-center justify-end p-10 rounded-xl sm:min-h-[288px] min-h-[480px]"
         style={{
           background:
-            "linear-gradient(90deg, rgba(83,70,221,0.8631827731092436) 18%, rgba(2,0,36,0.5018382352941176) 100%)",
+          matches ?  "linear-gradient(90deg, rgba(83,70,221,0.8631827731092436) 18%, rgba(2,0,36,0.5018382352941176) 100%)": "linear-gradient(180deg, #2E2499 18%, #130D55 100%)", 
           filter: hover ? "blur(2px)" : "",
         }}
         onMouseEnter={handleHover(true)}
         onMouseLeave={handleHover(false)}
       >
-        <Typography className="text-white text-lg font-bold mb-4 sm:w-1/2 w-full ">
+        <Typography className="text-white sm:text-2xl text-lg font-bold mb-4 sm:w-1/2 w-full ">
           Parejas, familiares o amigos
         </Typography>
         <Typography className="text-white text-10 sm:w-1/2 w-full ">

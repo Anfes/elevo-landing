@@ -10,8 +10,8 @@ const AplicateMas = () => {
           <Typography className="text-3xl text-white font-bold text-center ">
             ¡Cumplo con los requisitos!
           </Typography>
-          <Button className="bg-[#72DEDD] text-[#3F34BB] rounded-lg px-8 py-2 sm:ml-4 sm:mt-0 mt-8 sm:w-auto w-full">
-            Soy Masiterapeuta
+          <Button className="bg-[#72DEDD] text-[#3F34BB] rounded-lg px-8 py-2 sm:ml-4 sm:mt-0 mt-8 sm:w-auto w-full font-semibold">
+            Soy Masoterapeuta
           </Button>
         </div>
       </div>

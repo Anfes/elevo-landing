@@ -13,9 +13,9 @@ import { useEffect } from "react";
 
 const useStyles = makeStyles((theme) => ({
   summaryTittle: {
-    fontSize: "17px",
-    fontWeight: "bold",
+    fontSize: "18px",
     fontWeight: 700,
+    lineHeight: "24px",
   },
 }));
 
@@ -57,14 +57,15 @@ const CustomAccordion = (props) => {
         id="panel1a-header"
       >
         <Typography
-          color={expanded ? "#500CDD" : "#3B3F5D"}
+          color={expanded ? "#500CDD" : "#535978"}
+          style={{ fontWeight: expanded ? "bold" : "normal" }}
           className={classes.summaryTittle}
         >
           {title}
         </Typography>
       </AccordionSummaryCustom>
       <AccordionDetails>
-        <Typography className="text-14">{description}</Typography>
+       {description}
       </AccordionDetails>
     </AccordionCustom>
   );

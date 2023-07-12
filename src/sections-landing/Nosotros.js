@@ -49,33 +49,36 @@ const Nosotros = () => {
         backgroundPositionX: "left",
         height: matches ? `${(864 * (ancho * 0.6)) / 904}px` : "",
       }}
-      className="w-full flex items-center mb-20"
+      className="w-full flex items-center"
     >
       <div className="container mx-auto grid grid-cols-2 w-full  sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full  ">
         <div className={matches ? "col-start-2" : "col-start-1 col-span-2"}>
-          <Typography className="sm:text-4xl text-2xl xl:mt-0 mt-12 font-bold text-[#2D3145] mb-4 ">
+          <Typography className="sm:text-4xl leading-10 text-[32px] xl:mt-0 mt-20 font-bold text-[#2D3145] mb-4 ">
             ¿Por qué en <span className="text-[#3F34BB]">elevo</span> somos{" "}
             <span className="text-[#3F34BB]">cracks?</span>
           </Typography>
-          <Typography className="sm:text-11 text-[12px] text-[#535978] mt-4">
+          <Typography className="text-lg font-normal leading-6 text-[#535978] sm:mb-10 mb-[60px]">
             Todos los servicios de elevo son TOP. Pensamos en tu bienestar y el
             de tu familia. Llevamos literal bienestar a la puerta de tu hogar u
             oficina.
           </Typography>
+          <div className="mb-32 " >
           {listReasons.map((item, index) => (
             <div
               key={index}
-              className="my-6 flex items-center border-[1px] border-solid border-[#E0E5FC] rounded-2xl bg-white p-6 "
+              className="my-8 flex items-center border-[1px] border-solid border-[#E0E5FC] rounded-2xl bg-white p-6 "
             >
-              <div>{item.icon}</div>
+              <Typography
+              >{item.icon}</Typography>
               <div className="ml-4">
-                <Typography className="sm:text-10 text-[12px] text-[#535978]">
-                  <span className="text-[#3F34BB]">{item.title}</span>{" "}
+                <Typography className="text-sm leading-6 text-[#535978]">
+                  <span className="text-[#3F34BB] font-semibold ">{item.title}</span>{" "}
                   {item.description}
                 </Typography>
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </div>

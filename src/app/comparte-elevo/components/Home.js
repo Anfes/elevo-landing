@@ -29,7 +29,7 @@ const Home = () => {
               color="#2D3145"
             >
               Comparte
-              <span style={{ color: "#3F34BB" }}> Elevo</span>
+              <span style={{ color: "#3F34BB" }}> elevo</span>
             </Typography>
             <Typography
               variant="h6"

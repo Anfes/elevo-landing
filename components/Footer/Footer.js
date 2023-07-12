@@ -9,19 +9,22 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className="w-full bg-[#2E2499] py-16">
       <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full grid grid-cols-3 ">
         <div className="flex flex-col first-letter: md:col-span-1 col-span-3 mb-12">
-          <img
+          <Image
             src="/assets/images/icon/icon-elevo-w.png"
             alt="logo"
-            className="w-40 mb-8"
+            className="mb-8"
+            width={160}
+            height={40}
           />
           <Typography variant="body1" className="text-[#fff] text-[12px] mb-12">
-            Elevo es una plataforma digital que conecta a los mejores
+            elevo es una plataforma digital que conecta a los mejores
             profesionales de la salud con personas que buscan bienestar y
             calidad de vida.
           </Typography>
@@ -118,7 +121,7 @@ const Footer = () => {
       </div>
       <div className="mt-32 py-12 border-t-[1px] border-t-solid border-t-[#6A5CFF] container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full">
         <Typography variant="body1" className="text-[#8B81FF] text-left">
-          © Copyright 2023 Elevo LLC | All Rights Reserved.
+          © Copyright 2023 elevo LLC | All Rights Reserved.
         </Typography>
       </div>
     </div>

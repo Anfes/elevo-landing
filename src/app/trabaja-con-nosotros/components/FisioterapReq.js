@@ -42,9 +42,9 @@ const FisioterapReq = () => {
       </Typography>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-12">
         {fisioterapReqList.map((item, index) => (
-          <div className="border-2 border-[#E0E5FC] rounded-2xl p-8 flex justify-center items-center">
+          <div key={index} className="border-2 border-[#E0E5FC] rounded-2xl p-8 flex justify-center items-center">
             <div className="flex justify-center items-center">{item.icon}</div>
-            <Typography className="text-lg text-center">
+            <Typography className="text-lg sm:text-center text-left ">
               {item.description}
             </Typography>
           </div>

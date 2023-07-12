@@ -27,7 +27,7 @@ const Home = () => {
           <div className="md:w-1/2 w-full">
             <Typography
               variant="h1"
-              className="font-bold md:text-6xl text-4xl md:leading-[4.5rem]	"
+              className="sm:font-semibold font-bold sm:leading-[72px] leading-10 sm:text-6xl text-[32px] md:leading-[4.5rem] mb-6	"
               color="#2D3145"
             >
               Masaje
@@ -35,7 +35,7 @@ const Home = () => {
             </Typography>
             <Typography
               variant="h6"
-              className="md:text-2xl text-lg leading-[2rem] my-8"
+              className="sm:text-xl text-base sm:leading-8 leading-6  sm:font-medium font-normal sm:mb-6 mb-8 "
               color="#2D3145"
             >
               Técnicas manuales intensas, enfocadas en recuperación deportiva

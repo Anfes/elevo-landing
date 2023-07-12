@@ -16,6 +16,7 @@ import { makeStyles } from "@mui/styles";
 import TodayRoundedIcon from "@mui/icons-material/TodayRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     color: "#535978",
     fontWeight: "600",
-
+    fontSize: "14px",
     "&:hover": {
       color: "#000",
     },
@@ -40,6 +41,16 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "#5F53DF",
       color: "#fff",
+    },
+  },
+  loginLink: {
+    backgroundColor: "#fff",
+    color: "#5346DD",
+    border: "1px solid #5346DD",
+    borderRadius: "5px",
+    "&:hover": {
+      backgroundColor: "#EFE8FF",
+      color: "#5346DD",
     },
   },
 }));
@@ -61,6 +72,10 @@ const menuList = [
     name: "Contáctanos",
     link: "#contacto",
   },
+  {
+    name: "Inicio sesión",
+    link: "/inicio-sesion",
+  }
 ];
 
 const Header = () => {
@@ -73,39 +88,81 @@ const Header = () => {
   return (
     <AppBar position="static" className={classes.header}>
       <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full ">
-        <div className="flex justify-between py-6 ">
-          <div className={smallMovil ? "flex items-center" : "flex flex-col items-center"}>
-            <img
-              src="assets/images/icon/icon-elevo.png"
+        <div className="flex justify-between sm:py-6 pb-6 pt-12 ">
+          <div
+            className={
+              smallMovil
+                ? "flex items-center justify-center "
+                : "flex flex-col items-center justify-center "
+            }
+          >
+            <Image
+              src="/assets/images/icon/icon-elevo.png"
               alt="logo"
-              className="w-40 mr-2"
+              className="mr-2"
+              width={160}
+              height={40}
             />
           </div>
           {matches && (
-            <div className="grid grid-cols-5 gap-4">
+            <div className="grid grid-row-1 grid-flow-col gap-8">
               {menuList.map((menu, index) => (
-                <Link href={menu.link} className={classes.menuText}>
+                <Link
+                  key={index + 1}
+                  href={menu.link}
+                  className={classes.menuText}
+                >
                   {menu.name}
                 </Link>
               ))}
               <Link
-                href="/reserva-cita"
-                className={clsx(classes.reserveLink, classes.menuText, "text-center px-[20px] py-[10px] ")}
+                href="/inicio-sesion"
+                className={clsx(
+                  classes.loginLink,
+                  classes.menuText,
+                  "text-center text-sm px-4 py-3"
+                )}
               >
-                ¡Reserva ahora! <TodayRoundedIcon className="ml-2" />
+                Iniciar sesión
+              </Link>
+              <Link
+                href="/reserva-cita"
+                className={clsx(
+                  classes.reserveLink,
+                  classes.menuText,
+                  "text-center text-sm px-4 py-3"
+                )}
+              >
+                ¡Reserva ahora! <TodayRoundedIcon className="ml-2 text-lg " />
               </Link>
             </div>
           )}
           {!matches && (
             <div className="xs:gap-4 gap-1 flex items-center">
+              {!movil && (
+                <Link
+                  href="/inicio-sesion"
+                  className={clsx(
+                    classes.loginLink,
+                    classes.menuText,
+                    "text-center text-sm px-4 py-3"
+                  )}
+                >
+                  Iniciar sesión
+                </Link>
+              )}
               <Link
                 href="/reserva-cita"
-                className={clsx(classes.reserveLink, classes.menuText, "text-[12px] sm:text-[16px] text-center px-[5px] py-[10px] sm:px-[20px] sm:py-[10px] ")}
+                className={clsx(
+                  classes.reserveLink,
+                  classes.menuText,
+                  "text-center text-sm px-4 py-3 sm:mx-0 mx-2 "
+                )}
               >
-                ¡Reserva ahora! {!movil && <TodayRoundedIcon className="ml-2 " />}
+                ¡Reserva ahora!
               </Link>
               <IconButton
-              className="w-1 h-1"
+                className="w-1 h-1"
                 onClick={() => {
                   setDrawer(true);
                 }}

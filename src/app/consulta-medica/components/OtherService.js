@@ -51,7 +51,7 @@ const OtherServices = () => {
     <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full mb-32">
       <Typography
         variant="h5"
-        className="font-bold text-center text-3x1 mb-4"
+        className="font-bold sm:text-center text-[32px] mb-4 leading-10"
         color="#2D3145"
       >
         Otros <span style={{ color: "#5346DD" }}>Servicios </span> que te
@@ -59,7 +59,7 @@ const OtherServices = () => {
       </Typography>
       <Typography
         variant="h6"
-        className="text-center mb-16 text-base "
+        className="sm:text-center mb-24 text-lg leading-6 font-normal "
         color="#535978"
         style={{ maxWidth: "600px", margin: "0 auto" }}
       >
@@ -69,13 +69,13 @@ const OtherServices = () => {
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mt-16 mb-24">
         {arrayList.map((service, index) => {
           return (
-            <div>
-              <div
+            <div key={service.id}>
+          <div
                 className="flex justify-center"
                 style={hover === index ? { filter: "blur(2px)" } : {}}
               >
                 <div
-                  className="flex flex-col justify-end p-4 bg-cover bg-no-repeat bg-center max-w-[380px] min-h-[380px]"
+                  className="flex flex-col justify-end p-6 bg-cover bg-no-repeat bg-center max-w-[320px] min-h-[400px]"
                   style={{
                     backgroundImage: `url(${service.image})`,
                     borderRadius: 24,
@@ -86,7 +86,7 @@ const OtherServices = () => {
                   <div className="flex items-center mb-2 gap-2">
                     <Typography
                       variant="h5"
-                      className="font-bold text-lg"
+                      className="font-bold text-xl leading-8"
                       color="#fff"
                     >
                       {service.name}
@@ -101,7 +101,7 @@ const OtherServices = () => {
                   </div>
                   <Typography
                     variant="h6"
-                    className="text-sm leading-[1.5rem]"
+                    className="text-sm leading-6 font-medium "
                     color="#fff"
                   >
                     {service.description}

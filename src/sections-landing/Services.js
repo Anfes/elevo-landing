@@ -95,14 +95,14 @@ const Services = () => {
     <div className="container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full">
       <Typography
         variant="h5"
-        className="font-bold text-center text-3x1 mb-4"
+        className="font-bold text-center sm:text-[32px] text-2xl sm:leading-10 leading-8 mb-4"
         color="#2D3145"
       >
         Nuestros <span style={{ color: "#5346DD" }}>Servicios</span>
       </Typography>
       <Typography
         variant="h6"
-        className="text-center mb-16 text-base "
+        className="text-center sm:mb-20 mb-16 sm:text-lg text-base font-normal leading-6 "
         color="#535978"
         style={{ maxWidth: "600px", margin: "0 auto" }}
       >
@@ -110,15 +110,15 @@ const Services = () => {
         nuestros servicios únicos para cuidar de tu cuerpo y mente.
       </Typography>
       {matches && (
-        <div className="grid grid-cols-3 gap-8 mt-16 mb-24">
+        <div className="grid grid-cols-3 gap-20 mt-16 mb-72">
           {servicesList.map((service, index) => (
-            <div>
+            <div key={service.id}>
               <div
                 className="flex justify-center"
                 style={hover === index ? { filter: "blur(2px)" } : {}}
               >
                 <div
-                  className="flex flex-col justify-end p-4 bg-cover bg-no-repeat bg-center max-w-[380px] min-h-[380px]"
+                  className="flex flex-col justify-end p-6 bg-cover bg-no-repeat bg-center max-w-[320px] min-h-[400px]"
                   style={{
                     backgroundImage: `url(${service.image})`,
                     borderRadius: 24,
@@ -129,7 +129,7 @@ const Services = () => {
                   <div className="flex items-center mb-2 gap-2">
                     <Typography
                       variant="h5"
-                      className="font-bold text-lg"
+                      className="font-bold text-xl leading-8"
                       color="#fff"
                     >
                       {service.name}
@@ -144,7 +144,7 @@ const Services = () => {
                   </div>
                   <Typography
                     variant="h6"
-                    className="text-sm leading-[1.5rem]"
+                    className="text-sm leading-6 font-medium "
                     color="#fff"
                   >
                     {service.description}
@@ -154,7 +154,7 @@ const Services = () => {
               {hover === index && (
                 <div className="flex justify-center -mt-[381px] ">
                   <div
-                    className="flex flex-col justify-center items-center p-4 max-w-[380px] min-h-[380px]"
+                    className="flex flex-col justify-center items-center  max-w-[320px] min-h-[380px]"
                     style={{
                       borderRadius: 24,
                     }}
@@ -193,7 +193,7 @@ const Services = () => {
         </div>
       )}
       {!matches && (
-        <div className="mt-16 mb-32">
+        <div className="mt-16 mb-36">
           <Slider
             infinite
             rows
@@ -217,13 +217,13 @@ const Services = () => {
             {servicesList?.length &&
               servicesList.map((service, index) => {
                 return (
-                  <div className="px-1">
+                  <div className="px-1" key={service.id}>
                     <div
                       className="flex justify-center"
                       style={hover === index ? { filter: "blur(2px)" } : {}}
                     >
                       <div
-                        className="flex flex-col justify-end p-4 bg-cover bg-no-repeat bg-center max-w-[380px] min-h-[380px]"
+                        className="flex flex-col justify-end p-4 bg-cover bg-no-repeat bg-center sm:max-w-[320px] max-w-[380px] min-h-[400px]"
                         style={{
                           backgroundImage: `url(${service.image})`,
                           borderRadius: 24,
@@ -262,7 +262,7 @@ const Services = () => {
                     {hover === index && (
                       <div className="flex justify-center -mt-[381px] ">
                         <div
-                          className="flex flex-col justify-center items-center p-4 max-w-[380px] min-h-[380px]"
+                          className="flex flex-col justify-center items-center p-4 sm:max-w-[320px] max-w-[380px] min-h-[400px]"
                           style={{
                             borderRadius: 24,
                           }}
@@ -281,17 +281,18 @@ const Services = () => {
                             </Link>
                           </div>
                           <div className=" z-10" style={{ marginTop: 30 }}>
-                            <CustomLinkButton
-                              className="outlinedWhite"
-                              label="Reservar Servicio"
-                              href="/reserva-cita"
-                              icon={
-                                <TodayRoundedIcon
-                                  style={{ color: "white" }}
-                                  className="ml-2"
-                                />
-                              }
-                            />
+                            <Link href="/reserva-cita">
+                              <CustomLinkButton
+                                className="outlinedWhite"
+                                label="Reservar Servicio"
+                                icon={
+                                  <TodayRoundedIcon
+                                    style={{ color: "white" }}
+                                    className="ml-2"
+                                  />
+                                }
+                              />
+                            </Link>
                           </div>
                         </div>
                       </div>

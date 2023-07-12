@@ -13,6 +13,7 @@ import TodayRoundedIcon from "@mui/icons-material/TodayRounded";
 import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   buttonSend: {
@@ -208,9 +209,10 @@ const Contact = () => {
                         sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
                         {...props}
                       >
-                        <img
+                        <Image
                           loading="lazy"
-                          width="20"
+                          width={20}
+                          height={20}
                           src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
                           srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
                           alt=""

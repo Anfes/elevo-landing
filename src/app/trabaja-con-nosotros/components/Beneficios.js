@@ -6,32 +6,32 @@ import { Typography } from "@mui/material";
 const beneficiosList = [
   {
     title: "Te contratamos por prestación de servicios.",
-    icon: <PhoneIphoneIcon className="text-[#5DC1C0] text-3xl " />,
+    icon: <PhoneIphoneIcon className="text-[#3F34BB] text-3xl " />,
     description: "Te contratamos por prestación de servicios.",
   },
   {
     title: "Te pagamos por cada sesión realizada.",
-    icon: <PhoneIphoneIcon className="text-[#5DC1C0] text-3xl " />,
+    icon: <PhoneIphoneIcon className="text-[#3F34BB] text-3xl " />,
     description: "Te pagamos por cada sesión realizada.",
   },
   {
     title: "Recibirás capacitación y dotación inicial.",
-    icon: <PhoneIphoneIcon className="text-[#5DC1C0] text-3xl " />,
+    icon: <PhoneIphoneIcon className="text-[#3F34BB] text-3xl " />,
     description: "Recibirás capacitación y dotación inicial.",
   },
   {
     title: "Recibirás capacitación y dotación inicial.",
-    icon: <PhoneIphoneIcon className="text-[#5DC1C0] text-3xl " />,
+    icon: <PhoneIphoneIcon className="text-[#3F34BB] text-3xl " />,
     description: "Recibirás capacitación y dotación inicial.",
   },
   {
     title: "Recibirás capacitación y dotación inicial.",
-    icon: <PhoneIphoneIcon className="text-[#5DC1C0] text-3xl " />,
+    icon: <PhoneIphoneIcon className="text-[#3F34BB] text-3xl " />,
     description: "Recibirás capacitación y dotación inicial.",
   },
   {
     title: "Recibirás capacitación y dotación inicial.",
-    icon: <PhoneIphoneIcon className="text-[#5DC1C0] text-3xl " />,
+    icon: <PhoneIphoneIcon className="text-[#3F34BB] text-3xl " />,
     description: "Recibirás capacitación y dotación inicial.",
   },
 ];
@@ -49,7 +49,7 @@ const Beneficios = () => {
       </Typography>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-12">
         {beneficiosList.map((beneficio, index) => (
-          <div className="border-2 border-[#C5CDF7] rounded-2xl p-4">
+          <div key={index} className="border-2 border-[#C5CDF7] rounded-2xl p-4">
             <div className="mb-4">{beneficio.icon}</div>
             <Typography className="font font-semibold mb-4 text-[#3F34BB]">
               {beneficio.title}

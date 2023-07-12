@@ -39,20 +39,18 @@ const FrecuentQuestions = () => {
     setExpanded(isExpanded ? panel : false);
   };
 
-console.log("FrecuentQuestions.js: preguntas: ", expanded);
-
   return (
     <div className="flex justify-center container sm:mx-auto xl:px-36 lg:px-36 px-8 min-w-full my-32">
       <div className="w-full">
         <Typography
           variant="h2"
-          className="font-bold text-4xl text-center text-[#3F34BB] mb-8 "
+          className="font-bold text-[32px] text-center mb-4 text-[#3F34BB]"
         >
           <span style={{ color: "#2D3145" }}>Preguntas</span> frecuentes
         </Typography>
         <Typography
           variant="h6"
-          className="text-center text-[#535978] mb-12 sm:px-32 text-sm "
+          className="text-[#535978] text-center mb-16 text-lg leading-6 font-normal"
         >
           En elevo no queda nada al aire. Encuentra respuestas a tus dudas más
           comunes. Descubre todo lo que necesitas saber sobre nuestros masajes y
@@ -62,7 +60,11 @@ console.log("FrecuentQuestions.js: preguntas: ", expanded);
           <div key={index}>
             <CustomAccordion
               title={pregunta.title}
-              description={pregunta.description}
+              description={
+                <Typography className="text-[#535978] text-base leading-6 font-normal">
+                  {pregunta.description}
+                </Typography>
+              }
               expanded={expanded === index}
               onChange={handleChange(index)}
             />

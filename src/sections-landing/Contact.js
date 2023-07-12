@@ -8,6 +8,7 @@ import ctr from "@components/countries/Countries";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { makeStyles } from "@mui/styles";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   buttonSend: {
@@ -83,12 +84,12 @@ const Contact = () => {
         <div className="flex flex-col justify-center md:col-span-1 col-span-2">
           <Typography
             variant="h2"
-            className="font-bold text-4xl text-[#2D3145] md:text-left text-center"
+            className="font-bold mb-4 sm:text-4xl text-2xl sm:leading-8 leading-6 text-[#2D3145] md:text-left sm:text-center"
           >
             ¿Aún tienes <span className="text-[#3F34BB]">preguntas</span> sin
             responder?
           </Typography>
-          <Typography variant="body1" className="text-[#535978] mt-2 md:text-left text-center ">
+          <Typography variant="body1" className="text-[#535978] md:text-left sm:text-center sm:mb-0 mb-16">
             No te preocupes, nuestro equipo estará siempre disponible para
             responder todas tus preguntas
           </Typography>
@@ -191,9 +192,10 @@ const Contact = () => {
                         sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
                         {...props}
                       >
-                        <img
+                        <Image
                           loading="lazy"
-                          width="20"
+                          width={20}
+                          height={20}
                           src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
                           srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
                           alt=""

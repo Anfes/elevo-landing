@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
+
+import { Button, Link } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import Link from "next/link";
 
 const useStyles = makeStyles((theme) => ({
   primary: {
@@ -36,12 +36,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   outlinedPrimary: {
-    background: "white",
-    border: "2px solid #5346DD",
+    background: "transparent",
+    border: "1px solid #5346DD",
     color: "#5346DD",
     fontWeight: 600,
+    fontSize: "16px",
+    lineHeight: "24px",
     borderRadius: 8,
-    padding: 14,
+    padding: 16,
     "&:hover": {
       background: "#EFE8FF",
       textDecoration: "none",
@@ -88,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CustomLinkButton = (props) => {
   const classes = useStyles();
-  const { label, className, icon, width, href } = props;
+  const { label, className, icon, width } = props;
 
   const variantButton =
     className === "primary"
@@ -102,17 +104,13 @@ const CustomLinkButton = (props) => {
       : className === "secondary"
       ? classes.secondary
       : classes.primary;
-
   return (
     <Button
+      style={{ width: width && width, textTransform: "none" }}
       {...props}
       className={variantButton}
-      variant={className === "primary" ? "contained" : "text"}
-      style={{ width: width && width }}
     >
-      <Link href={href}>
-        {label} {icon && icon}
-      </Link>
+      {label} {icon && icon}
     </Button>
   );
 };

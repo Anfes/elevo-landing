@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.0",
+    "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.1.0",
     "@mui/icons-material": "^5.11.16",
@@ -19,19 +21,22 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.14",
     "clsx": "^1.2.1",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "next": "13.4.2",
-    "postcss": "^8.4.24",
     "postcss-import": "^15.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "tailwindcss": "^3.3.2",
     "yup": "^1.1.1"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
   }
 }
